@@ -1,0 +1,43 @@
+<div *ngIf="Vacante">
+<h2 class="text-3xl font-bold mb-6">{{ Vacante.title }}</h2>
+
+<div class="bg-slate-100 flex justify-between p-10">
+    <div class="flex flex-col justify-between">
+        <p><span class="font-bold uppercase ">Empresa: </span>{{ Vacante.empresa }}</p>
+        <p><span class="font-bold uppercase">Categoria: </span>{{ Vacante.categoria.categoria }}</p>
+    </div>
+
+    <div class="flex flex-col justify-between">
+        <p><span class="font-bold uppercase">Ultimo dia para postularse: </span>{{ Vacante.date }}</p>
+        <p><span class="font-bold uppercase ">Salario: </span>{{ Vacante.salario.salario }}</p>
+    </div>
+</div>
+<div class="flex mt-10 ">
+    <div>
+        <!-- ver-vacantes.component.html -->
+
+        <div *ngIf="imagen" >
+            
+            <img class="image" [src]="imagen" alt="Imagen de la vacante">
+        </div>
+
+    </div>
+
+    <div>
+        <h3 class="my-4 font-bold text-2xl">Descripcion del Puesto</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas inventore veritatis libero error accusamus
+            dolorem</p>
+    </div>
+</div>
+</div>
+
+<div class="bg-slate-100  py-4 mt-6 flex flex-col items-center	tracking-wider ">
+ <h3 class="text-3xl font-bold my-5">Postularme a esta vacante</h3>
+ <form (submit)="onSubmit()" class="flex flex-col mb-5">
+    
+    <label for="cv"  class="uppercase mb-5">Curriculum o Hoja de Vida (pdf)</label>
+    <input type="file" name="cv" id="cv" class="mb-5" (change)="onFileChange($event)">
+    <span *ngIf="error" class="text-red-500 uppercase mb-3 font-bold">El archivo debe ser pdf</span>
+    <p-button label="Postularme" type="submit" ></p-button>
+ </form>   
+</div>

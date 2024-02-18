@@ -1,0 +1,59 @@
+<h3 class="font-bold text-3xl text-center uppercase my-10">Datos Personales</h3>
+<div class="flex justify-center  my-3 ">
+    <form class="form  bg-white p-12 drop-shadow-lg " [formGroup]="forms" (submit)="onSubmit()">
+        <div class="mb-6">
+            <label for="title" class="mb-2">Telefono:</label>
+            <input pInputText  id="title" class="w-full" formControlName="telefono" />
+        </div>
+        
+        <div class="mb-6">
+            <label for="title" class="mb-2">Direccion:</label>
+            <input pInputText id="title" class="w-full" formControlName="direccion" />
+        </div>
+
+        
+        <div class="mb-6">
+            <label for="title" class="mb-2">Nacionalidad:</label>
+            <input pInputText id="title" class="w-full" formControlName="nacionalidad" />
+        </div>
+
+        <div class="mb-6">
+            <label for="title" class="mb-2">D.N.I:</label>
+            <input pInputText id="title" class="w-full" formControlName="dni" />
+        </div>
+      
+        <div class="mb-6">
+            <label for="title" class="mb-2">Github</label>
+            <input pInputText id="title" class="w-full" formControlName="github" />
+        </div>
+
+        <div class="mb-6">
+            <label for="title" class="mb-2">Facebook:</label>
+            <input pInputText id="title" class="w-full" formControlName="facebook" />
+        </div>
+        <div class="mb-6">
+            <label for="title" class="mb-2">Linkedin:</label>
+            <input pInputText id="title" class="w-full" formControlName="linkedin" />
+        </div>
+      
+        <div class="mb-6">
+            <label for="time" class="mb-2">Fecha de nacimiento:</label>
+            <p-calendar [style]="{'width':'100%'}" [showIcon]="true" formControlName="fecha_nacimiento"></p-calendar>
+        </div>
+
+        <div class="mb-6">
+            <label for="" class="mb-1">Descripcion del Puesto</label>
+            <p-editor [style]="{ height: '220px' }" formControlName="presentacion"></p-editor>
+        </div>
+        <div class="w-full mb-8">
+            <label for="fileInput" class="file-label">
+                <span class="file-icon"><i class="pi pi-upload"></i></span>
+                Subir Archivo
+            </label>
+            <input type="file" id="fileInput" class="hidden" formControlName="foto" (change)="onFileSelected($event)" />
+            <span id="fileName" class="file-name">Ningún archivo seleccionado</span>
+        </div>
+
+        <p-button type="submit" label="AGREGAR"></p-button>
+    </form>
+</div>

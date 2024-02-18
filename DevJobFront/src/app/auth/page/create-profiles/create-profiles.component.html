@@ -1,0 +1,114 @@
+<div class="flex justify-center my-8">
+    <div class="bg-white p-6 md:p-12 rounded-lg shadow-lg w-full max-w-md">
+
+        <div class="mb-6">
+            <h4 class="text-gray-800 font-semibold text-2xl mb-4">Datos Personales</h4>
+          
+            <p class="text-sm text-gray-600 mb-2">Teléfono: <span class="font-bold">{{Perfil?.telefono || ""}}</span></p>
+            <p class="text-sm text-gray-600 mb-2">Facebook: <span class="font-bold">{{ Perfil?.facebook }}</span></p>
+            <p class="text-sm text-gray-600 mb-2">LinkedIn: <span class="font-bold">{{ Perfil?.linkedin }}</span></p>
+            <p class="text-sm text-gray-600 mb-2">Email: <span class="font-bold">{{ Perfil?.email }}</span></p>
+            <p class="text-sm text-gray-600 mb-2">Fecha de nacimiento: <span class="font-bold">{{ Perfil?.fecha_nacimiento }}</span></p>
+            <p class="text-sm text-gray-600 mb-2">D.N.I: <span class="font-bold">{{ Perfil?.dni }}</span></p>
+            <p class="text-sm text-gray-600 mb-2">Dirección: <span class="font-bold">{{ Perfil?.direccion }}</span></p>
+          
+            <!-- Botones de Acción -->
+            <div class="flex flex-col items-center  mb-6">
+              
+              <button class="bg-blue-500 w-full text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300" routerLink="../create-datospersonal">
+                Editar
+              </button>
+            </div>
+          </div>
+    
+
+      <!-- Sección de Educación Primaria -->
+      <div class="mb-8">
+        <h4 class="text-gray-800 font-semibold text-2xl mb-4">Educación Primaria</h4>
+        <p class="text-sm text-gray-600 mb-2">Estado:  <span class="font-bold text-green-500">{{ Perfil?.educacion[0] ? Perfil?.educacion[0].estado  }}</span></p>
+        <p class="text-sm text-gray-600 mb-2">Nombre de la Institución: <span class="font-bold">Antonio del Viso</span></p>
+        <div class="flex flex-col md:flex-row items-center mb-4">
+          <div class="flex items-center mb-2 md:mb-0">
+            <span class="text-gray-800 font-semibold mr-2">Inicio:</span>
+            <span class="text-gray-800">01/01/2022</span>
+          </div>
+          <div class="flex items-center ml-2">
+            <span class="text-gray-800 font-semibold mr-2">Finalización:</span>
+            <span class="text-gray-800">31/12/2022</span>
+          </div>
+        </div>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full" routerLink="../create-educacion/primaria">
+          Editar
+        </button>
+      </div>
+  
+      <!-- Sección de Educación Secundaria -->
+      <div class="mb-8">
+        <h4 class="text-gray-800 font-semibold text-2xl mb-4">Educación Secundaria</h4>
+        <p class="text-sm text-gray-600 mb-2">Estado: <span class="font-bold text-yellow-500">En progreso</span></p>
+        <p class="text-sm text-gray-600 mb-2">Nombre de la Institución: <span class="font-bold">Otra Institución</span></p>
+        <div class="flex flex-col md:flex-row items-center mb-4">
+          <div class="flex items-center mb-2 md:mb-0">
+            <span class="text-gray-800 font-semibold mr-2">Inicio:</span>
+            <span class="text-gray-800">01/01/2023</span>
+          </div>
+          <div class="flex items-center ml-2">
+            <span class="text-gray-800 font-semibold mr-2">Finalización:</span>
+            <span class="text-gray-800">31/12/2025</span>
+          </div>
+        </div>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full" routerLink="../create-educacion/secundaria">
+          Editar
+        </button>
+      </div>
+  
+      <!-- Sección de Educación Superior -->
+      <div class="mb-8">
+        <h4 class="text-gray-800 font-semibold text-2xl mb-4">Educación Superior</h4>
+        <p class="text-sm text-gray-600 mb-2">Estado: <span class="font-bold text-red-500">Pendiente</span></p>
+        <p class="text-sm text-gray-600 mb-2">Nombre de la Institución: <span class="font-bold">Universidad ABC</span></p>
+        <div class="flex flex-col md:flex-row items-center mb-4">
+          <div class="flex items-center mb-2 md:mb-0">
+            <span class="text-gray-800 font-semibold mr-2">Inicio:</span>
+            <span class="text-gray-800">01/01/2026</span>
+          </div>
+          <div class="flex items-center ml-2">
+            <span class="text-gray-800 font-semibold mr-2">Finalización:</span>
+            <span class="text-gray-800">31/12/2028</span>
+          </div>
+        </div>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full" routerLink="../create-educacion/superior">
+          Editar
+        </button>
+      </div>
+    </div>
+      <!-- Sección de Experiencia Laboral -->
+      <div class="mb-6">
+        <h4 class="text-gray-800 font-semibold text-2xl mb-4">Experiencia Laboral</h4>
+        <p class="text-sm text-gray-600 mb-2">Puesto: <span class="font-bold">Desarrollador Web</span></p>
+        <p class="text-sm text-gray-600 mb-2">Empresa: <span class="font-bold">Desarrollo de aplicaciones web</span></p>
+        <div class="flex flex-col md:flex-row items-center mb-4">
+          <div class="flex items-center mb-2 md:mb-0">
+            <span class="text-gray-800 font-semibold mr-2">Fecha de Inicio:</span>
+            <span class="text-gray-800">01/01/2020</span>
+          </div>
+          <div class="flex items-center ml-2">
+            <span class="text-gray-800 font-semibold mr-2">Fecha de Fin:</span>
+            <span class="text-gray-800">31/12/2021</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1 mb-6">
+            
+          <button class="bg-green-500 w-full text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300" routerLink="../create-experiencia" >
+            Agregar Nuevo
+          </button>
+ 
+
+          <button class="bg-red-500 w-full text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-red-300">
+            Eliminar
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+.principal{
+    background-color: rgb(234, 237, 237);
+}
+
+nav{
+    border-bottom: 2px solid black;
+    background-color: white;
+    box-shadow: -2px 9px 5px -2px rgba(0,0,0,0.28);
+}
+
+
+.nav__principal a {
+    display: inline-block;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    text-decoration: none; /* Inicialmente sin subrayado */
+    position: relative;
+}
+
+.content{
+    width: 80%;
+}
+
+.nav__principal a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Altura inicial del subrayado */
+    background-image: linear-gradient(to right, #ff1100, transparent); /* Color del subrayado */
+    background-size: 0% 4px; /* Ancho inicial del subrayado */
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease; /* Efecto de transición suave */
+}
+
+.nav__principal a:hover::before {
+    background-size: 100% 2px; /* Hacer el subrayado al 100% de ancho al pasar el ratón */
+}

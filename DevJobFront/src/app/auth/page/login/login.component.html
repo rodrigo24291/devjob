@@ -1,0 +1,30 @@
+<div class="flex justify-center items-center h-screen bg-slate-100 flex-col">
+    
+    <p class="text-3xl my-3">Dev<span class="font-black">Jobs</span></p>
+    <div class="border p-10 bg-white ">
+        
+      <form [formGroup]="Form" (ngSubmit)="OnSubmit()">
+        <div class="mb-4 w-full">
+          <label for="email" class="font-bold">Email</label>
+          <input pInputText id="email" class="w-full" formControlName="email" />
+          <div *ngIf="ErrorFIeld('email')">
+          <span class="mt-2 text-red-500 font-bold">{{ ErrorMessage('email') }}</span>
+          </div>
+        </div>
+        
+  
+        <div class="mb-4 w-full">
+          <label for="password" class="font-bold">Password</label>
+          <input pInputText id="title" type="password" class="w-full" formControlName="password" />
+          <div *ngIf="ErrorFIeld('password')">
+           <span class="mt-2 text-red-500 font-bold"> {{ ErrorMessage('password') }}</span>
+        </div>
+        </div>
+        <p-button type="submit" styleClass="w-full" label="LOGUEARSE" ></p-button>
+  
+        <a [routerLink]="['../register']" class="mt-2 text-right block">No tenes cuenta? Registrate</a>
+      </form>
+    </div>
+</div>
+
+  

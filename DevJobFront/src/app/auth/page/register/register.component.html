@@ -1,0 +1,54 @@
+<div class="flex justify-center items-center h-screen bg-slate-100 flex-col my-10">
+    
+    <p class="text-3xl  my-8">Dev<span class="font-black">Jobs</span></p>
+    <div class="border p-6 bg-white">
+        
+      <form [formGroup]="Form" (submit)="OnSubmit()" >
+        <div class="mb-4">
+          <label for="name" class="font-bold">Name</label>
+          <input pInputText id="title" class="w-full" formControlName="name" />
+          <div *ngIf="ErrorField('name')">
+            <span class="mt-2 text-red-500 font-bold">{{ ErrorMessage('name') }}</span>
+            </div>
+        </div>
+
+        
+        <div class="mb-6">
+          <label for="rol" class="mb-2 font-bold">Rol</label>
+          <p-dropdown [options]="rol" formControlName="rol"   [style]="{'width':'100%'}"></p-dropdown>
+          
+      </div>
+
+        <div class="mb-4">
+          <label for="email" class="font-bold">Email</label>
+          <input pInputText id="title" class="w-full" formControlName="email" />
+          <div *ngIf="ErrorField('email')">
+            <span class="mt-2 text-red-500 font-bold">{{ ErrorMessage('email') }}</span>
+            </div>
+
+        </div>
+  
+        <div class="mb-4">
+          <label for="password" class="font-bold">Password</label>
+          <input pInputText id="title" class="w-full" formControlName="password" />
+          <div *ngIf="ErrorField('password')">
+            <span class="mt-2 text-red-500 font-bold">{{ ErrorMessage('password') }}</span>
+            </div>
+
+        </div>
+  
+        <div class="mb-4">
+          <label for="password_confirm" class="font-bold">Password Comfirm</label>
+          <input pInputText id="title" class="w-full" formControlName="password_confirm" />
+          <div *ngIf="ErrorField('password_confirm')">
+            <span class="mt-2 text-red-500 font-bold">{{ ErrorMessage('password_confirm') }}</span>
+            </div>
+
+        </div>
+
+        <p-button type="submit" styleClass="btn-grande" label="REGISTRARSE" style="width: 100% !important; font-size: 1.5em !important;"></p-button>
+        <a [routerLink]="['../login']"  class="mt-2  text-right block">Ya tenes cuenta? Logeate</a>
+      </form>
+    </div>
+  </div>
+  

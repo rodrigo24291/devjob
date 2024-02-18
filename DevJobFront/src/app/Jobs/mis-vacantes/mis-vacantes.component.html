@@ -1,0 +1,20 @@
+<div *ngIf="vacantes">
+<div *ngFor="let vacante of vacantes" class="border-b-4 py-4">
+<h3 class="font-bold text-2xl my-6">{{ vacante.title }}</h3>
+<div class="flex justify-between">
+<span class=" mb-4 uppercase font-medium	">
+{{ vacante.empresa }}
+</span>
+<div class=" mb-4">
+    <a class="p-3 bg-stone-800 rounded-full  text-white font-bold mr-2 tracking-widest cursor-pointer"> Candidatos</a>
+    <a class="p-3 bg-indigo-800 rounded-full  text-white font-bold mr-2 tracking-widest cursor-pointer" [routerLink]="['../create-vacante', vacante.id]"> Editar</a>
+    <a class="p-3 bg-red-600 rounded-full  text-white font-bold tracking-widest cursor-pointer" (click)="onDelete(vacante.id)" > Eliminar</a>
+</div>
+
+</div>
+<span class="text-slate-400 ">
+    {{ vacante.date }}
+</span>
+</div>
+<div class="divide-y-8"></div>
+</div>

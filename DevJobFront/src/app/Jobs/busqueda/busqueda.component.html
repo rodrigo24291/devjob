@@ -1,0 +1,89 @@
+<div class="bg-slate-200 h-60 w-full p-8 flex flex-col justify-around items-center">
+<h2 class="text-blue-600 font-bold text-3xl">
+    Encuentra un trabajo tech de forma remota
+</h2>
+<p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, 
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, 
+    
+</p>
+</div>
+
+<div>
+    <div>
+        <h3 class="text-2xl my-6 font-bold">Buscar y Filtrar Vacantes</h3>
+        
+            <form [formGroup]="form" (submit)="onSubmit()" class="flex flex-col ">
+                <div class="flex justify-between">
+                <div class="flex flex-col w-full mr-3">
+                    <label for="termino" class="font-bold">Termino de Busqueda</label>
+                    <span class="p-input-icon-left w-full">
+                        <i class="pi pi-search"></i>
+                        <input type="text" pInputText  class="w-full " formControlName="termino" />
+                    </span>
+                </div>
+                <div class="w-full mr-3">
+                    <label for="categoria" class="font-bold">Categoria</label>
+                    <p-dropdown [options]="categoria" formControlName="categoria"  [style]="{'width':'100%'}"></p-dropdown>
+                </div>
+
+                <div class="w-full">
+                    <label for="salario" class="font-bold">Salario</label>
+                    <p-dropdown [options]="salario" formControlName="salario"  [style]="{'width':'100%'}"></p-dropdown>
+                </div>
+            </div>
+                <p-button label="Buscar Vacantes" type="submit" class="mt-3"></p-button>
+
+            </form>
+        
+    </div>
+</div>
+
+<div class="mt-6">
+    <h3 *ngIf="!vacio" class="text-2xl font-bold mb-4"> Nuestras Vacantes Disponible</h3>
+    <div *ngIf="Vacantes.length!==0">
+  
+        <div class="vacante-container" *ngFor="let vacante of Vacantes">
+
+            <h3 class="text-2xl font-bold my-5">{{ vacante.title }}</h3>
+            <div class="flex justify-between">
+                <div>
+                    <p class="uppercase">{{ vacante.empresa }}</p>
+                    <p [innerHTML]="vacante.description"></p>
+                    <p>{{ vacante.salario.salario }}</p>
+                    <p>Ultimo dia para postularse: <span class="text-slate-400">{{ vacante.date }}</span></p>
+                </div>
+        
+                <div>
+                    <p-button [routerLink]="['/ver-vacante',vacante.id]" label="Ver vacante"></p-button>
+        
+                </div>
+            </div>
+            <div class="divide-y-8"></div>
+        </div>
+    </div>
+
+    <div *ngIf="Vacantes.length==0 && vacio == false ">
+  <div>{{ Vacantes.length }}</div>
+        <div class="vacante-container" *ngFor="let vacante of UltimasVacantes">
+
+            <h3 class="text-2xl font-bold my-5">{{ vacante.title }}</h3>
+            <div class="flex justify-between">
+                <div>
+                    <p class="uppercase">{{ vacante.empresa }}</p>
+                    <p [innerHTML]="vacante.description"></p>
+                    <p>{{ vacante.salario.salario }}</p>
+                    <p>Ultimo dia para postularse: <span class="text-slate-400">{{ vacante.date }}</span></p>
+                </div>
+        
+                <div>
+                    <p-button [routerLink]="['/ver-vacante',vacante.id]" label="Ver vacante"></p-button>
+        
+                </div>
+            </div>
+            <div class="divide-y-8"></div>
+        </div>
+    </div>
+    <h3 *ngIf="vacio"  class="text-2xl font-bold mb-4 text-center"> No Hay Vacantes Disponible</h3>
+    
+</div>

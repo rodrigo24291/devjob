@@ -1,0 +1,7 @@
+:host ::ng-deep .p-button{
+    width: 100% !important;
+  }
+  /* styles.css o estilos del componente mi-componente.css */
+p-button{
+width: 100%;
+}

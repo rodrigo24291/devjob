@@ -1,0 +1,28 @@
+<h3 class="font-bold text-3xl text-center uppercase my-10"> Eduacion : {{ nivel }}</h3>
+<div class="flex justify-center  my-3 ">
+    <form class="form  bg-white p-12 drop-shadow-lg " [formGroup]="forms" (submit)="onSubmit()">
+        <div class="mb-6">
+            <label for="title" class="mb-2">Nombre de la institucion:</label>
+            <input pInputText id="title" class="w-full" formControlName="institucion" />
+        </div>
+
+        <div class="mb-6">
+            <label for="nivel" class="mb-2">Estudios:</label>
+            <p-dropdown [options]="finalizado" [style]="{'width':'100%'}" formControlName="estado"></p-dropdown>
+        </div>
+
+
+        <div class="mb-6">
+            <label for="time" class="mb-2">Fecha de inicio:</label>
+            <p-calendar [style]="{'width':'100%'}" [showIcon]="true" formControlName="fecha_inicio"></p-calendar>
+        </div>
+
+
+        <div class="mb-6">
+            <label for="time" class="mb-2">Fecha de finalizacion:</label>
+            <p-calendar [style]="{'width':'100%'}" [showIcon]="true" formControlName="fecha_finalizacion"></p-calendar>
+        </div>
+       
+        <p-button type="submit" label="AGREGAR"></p-button>
+    </form>
+</div>

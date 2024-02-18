@@ -1,0 +1,18 @@
+<div class="vacante-container" *ngFor="let vacante of Vacantes">
+
+    <h3 class="text-2xl font-bold my-5">{{ vacante.title }}</h3>
+    <div class="flex justify-between">
+        <div>
+            <p class="uppercase">{{ vacante.empresa }}</p>
+            <p [innerHTML]="vacante.description"></p>
+            <p>{{ vacante.salario.salario }}</p>
+            <p>Ultimo dia para postularse: <span class="text-slate-400">{{ vacante.date }}</span></p>
+        </div>
+
+        <div>
+            <p-button label="Ver vacante"></p-button>
+
+        </div>
+    </div>
+    <div class="divide-y-8"></div>
+</div>
